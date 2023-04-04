@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'pink-trick';
+  title = 'bootstrap1';
+  users={
+    name:'sravani',
+    email:'rachabthulasravani@gmail.com'
+  }
+data: any;
+}
+{
+  name:'rohit'
+  email:'rohit@gmail.com'
+}
+{
+  name:'manasa'
+  email:'manasa@gmail.com'
 }

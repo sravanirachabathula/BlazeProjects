@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pink-trick": {
+    "bootstrap1": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pink-trick",
+            "outputPath": "dist/bootstrap1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "pink-trick:build:production"
+              "browserTarget": "bootstrap1:build:production"
             },
             "development": {
-              "browserTarget": "pink-trick:build:development"
+              "browserTarget": "bootstrap1:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +71,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pink-trick:build"
+            "browserTarget": "bootstrap1:build"
           }
         },
         "test": {
@@ -96,6 +96,6 @@
     }
   },
   "cli": {
-    "analytics": "9276d4c7-3b23-4e73-ac7d-176df19de038"
+    "analytics": "e74b9474-7c63-4f25-91e2-42773a443b52"
   }
 }
