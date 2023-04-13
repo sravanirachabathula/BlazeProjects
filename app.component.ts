@@ -1,4 +1,7 @@
+// app.component.ts
+
 import { Component } from '@angular/core';
+import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,18 +9,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bootstrap1';
-  users={
-    name:'sravani',
-    email:'rachabthulasravani@gmail.com'
+  title = 'Blaze registration';
+   angForm!: FormGroup;
+   constructor(private fb: FormBuilder) {
+    this.createForm();
   }
-data: any;
-}
-{
-  name:'rohit'
-  email:'rohit@gmail.com'
-}
-{
-  name:'manasa'
-  email:'manasa@gmail.com'
+   createForm() {
+    this.angForm = this.fb.group({
+       name: ['', Validators.required ],
+       address: ['', Validators.required ]
+    });
+  }
 }
