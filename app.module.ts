@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routerConfig';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    AboutComponent,
+    DashboardComponent,
     
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule
+    BrowserModule, RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
