@@ -1,23 +1,28 @@
-// app.component.ts
-
 import { Component } from '@angular/core';
-import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
+
+import { AuthService } from './auth.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+   selector: 'app-root',
+   templateUrl: './app.component.html',
+   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Blaze registration';
-   angForm!: FormGroup;
-   constructor(private fb: FormBuilder) {
-    this.createForm();
-  }
-   createForm() {
-    this.angForm = this.fb.group({
-       name: ['', Validators.required ],
-       address: ['', Validators.required ]
-    });
-  }
+
+   title = 'Expense Manager';
+   isUserLoggedIn = false;
+
+   constructor(private authService: AuthService) {}
+
+   ngOnInit() {
+      let storeData = localStorage.getItem("isUserLoggedIn");
+      console.log("StoreData: " + storeData);
+
+      if( storeData != null && storeData == "true")
+         this.isUserLoggedIn = true;
+      else
+
+
+         this.isUserLoggedIn = false;
+   }
 }
