@@ -1,28 +1,35 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router'; 
+import { HttpModule } from "@angular/http";
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { ExpenseEntryComponentComponent } from './expense-entry-component/expense-entry-component.component';
-import { ExpenseEntryListComponentComponent } from './expense-entry-list-component/expense-entry-list-component.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { GithubFollowersComponent } from './github-followers/github-followers.component';
+
+import { GithubFollowersService } from './github-followers/github-followers.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    LogoutComponent,
-    ExpenseEntryComponentComponent,
-    ExpenseEntryListComponentComponent,
+    HomeComponent,
+    GithubFollowersComponent,
+    AboutComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+    HttpModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'followers', component: GithubFollowersComponent }
+    ])
   ],
-  providers: [],
+  providers: [
+    GithubFollowersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
