@@ -1,35 +1,22 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ZippyComponent } from './zippy/zippy.component';
+import { TodosComponent } from './todos/todos.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router'; 
-import { HttpModule } from "@angular/http";
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { GithubFollowersComponent } from './github-followers/github-followers.component';
-
-import { GithubFollowersService } from './github-followers/github-followers.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    GithubFollowersComponent,
-    AboutComponent,
-    NavbarComponent
+    TodosComponent,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,
-    HttpModule,
-    RouterModule.forRoot([
-      { path: '', component: HomeComponent },
-      { path: 'followers', component: GithubFollowersComponent }
-    ])
+    BrowserAnimationsModule
   ],
-  providers: [
-    GithubFollowersService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
